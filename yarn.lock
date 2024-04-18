@@ -443,10 +443,10 @@
   resolved "https://registry.npmjs.org/@ungap/structured-clone/-/structured-clone-1.2.0.tgz"
   integrity sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==
 
-"@vscode/test-cli@^0.0.8":
-  version "0.0.8"
-  resolved "https://registry.npmjs.org/@vscode/test-cli/-/test-cli-0.0.8.tgz"
-  integrity sha512-sBSMSDzJChiiDjmys2Q6uI4SIoUYf0t6oDsQO3ypaQ7udha9YD4e2On9e9VE5OBayZMpxbgJX+NudmCwJMdOIg==
+"@vscode/test-cli@^0.0.9":
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/@vscode/test-cli/-/test-cli-0.0.9.tgz#7c8deca15d81ecf6df484ac2e420a85abc526ee6"
+  integrity sha512-vsl5/ueE3Jf0f6XzB0ECHHMsd5A0Yu6StElb8a+XsubZW7kHNAOw4Y3TSSuDzKEpLnJ92nbMy1Zl+KLGCE6NaA==
   dependencies:
     "@types/mocha" "^10.0.2"
     c8 "^9.1.0"
@@ -460,7 +460,7 @@
 
 "@vscode/test-electron@^2.3.9":
   version "2.3.9"
-  resolved "https://registry.npmjs.org/@vscode/test-electron/-/test-electron-2.3.9.tgz"
+  resolved "https://registry.yarnpkg.com/@vscode/test-electron/-/test-electron-2.3.9.tgz#f61181392634b408411e4302aef6e1cd2dd41474"
   integrity sha512-z3eiChaCQXMqBnk2aHHSEkobmC2VRalFQN0ApOAtydL172zXGxTwGrRtviT5HnUB+Q+G3vtEYFtuQkYqBzYgMA==
   dependencies:
     http-proxy-agent "^4.0.1"
