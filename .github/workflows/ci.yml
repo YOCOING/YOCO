@@ -10,25 +10,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '20'
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
 
-    - name: Install Yarn
-      run: npm install -g yarn
+      - name: Install Yarn
+        run: npm install -g yarn
 
-    - name: Install dependencies
-      run: yarn install
+      - name: Install dependencies
+        run: yarn install
 
-    - name: Run lint
-      run: yarn lint
+      - name: Run lint
+        run: yarn lint
 
-    - name: Compile the project
-      run: yarn compile
+      - name: Compile the project
+        run: yarn compile
 
-    - name: Run tests
-      run: yarn test
+      - name: Set up Xvfb and Run vscode-test
+        run: xvfb-run -a yarn test:vscode
