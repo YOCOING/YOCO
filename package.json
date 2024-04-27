@@ -3,8 +3,10 @@
   "displayName": "YOCO",
   "description": "You Only Code Once",
   "version": "0.0.1",
+  "license": "MIT",
   "engines": {
-    "vscode": "^1.88.0"
+    "vscode": "^1.88.0",
+    "yarn": "^1.22.0"
   },
   "categories": [
     "Other"
@@ -25,7 +27,7 @@
     "watch": "tsc -watch -p ./",
     "pretest": "yarn run compile && yarn run lint",
     "lint": "eslint src --ext ts",
-    "test": "vscode-test",
+    "test:vscode": "vscode-test",
     "lint-staged": "lint-staged",
     "prepare": "husky"
   },
