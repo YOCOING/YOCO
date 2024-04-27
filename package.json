@@ -27,7 +27,17 @@
         "mac": "cmd+shift+c",
         "when": "editorTextFocus"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "YOCO",
+      "properties": {
+        "YOCO.includeFilePath": {
+          "type": "boolean",
+          "default": true,
+          "description": "Include file path in copied text"
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "yarn run compile",

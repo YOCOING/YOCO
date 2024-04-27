@@ -10,12 +10,15 @@ export function activate(context: vscode.ExtensionContext) {
     }
 
     const document = editor.document;
-
     const selection = editor.selection;
-    const filePath = document.uri.path;
     const text = document.getText(selection);
 
-    const comment = `//${filePath}`;
+    // settings의 YOCO.includeFilePath가 true일 경우에만 실행
+    const includeFilePath = vscode.workspace.getConfiguration("YOCO").get("includeFilePath");
+
+    const filePath = document.uri.path;
+
+    const comment = `//${includeFilePath ? filePath : filePath.split("/").pop()}\n`;
 
     vscode.env.clipboard.writeText(comment + text);
   });
