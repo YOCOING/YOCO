@@ -16,8 +16,8 @@
   "contributes": {
     "commands": [
       {
-        "command": "YOCO.helloWorld",
-        "title": "Hello World"
+        "command": "YOCO.copyTextWithFilePath",
+        "title": "Copy Text With FileName as Comment"
       }
     ]
   },
