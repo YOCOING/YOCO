@@ -16,10 +16,28 @@
   "contributes": {
     "commands": [
       {
-        "command": "YOCO.helloWorld",
-        "title": "Hello World"
+        "command": "YOCO.copyTextWithFilePath",
+        "title": "Copy Text With FileName as Comment"
       }
-    ]
+    ],
+    "keybindings": [
+      {
+        "command": "YOCO.copyTextWithFilePath",
+        "key": "ctrl+shift+c",
+        "mac": "cmd+shift+c",
+        "when": "editorTextFocus"
+      }
+    ],
+    "configuration": {
+      "title": "YOCO",
+      "properties": {
+        "YOCO.includeFilePath": {
+          "type": "boolean",
+          "default": true,
+          "description": "Include file path in copied text"
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "yarn run compile",
