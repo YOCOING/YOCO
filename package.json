@@ -33,7 +33,7 @@
       }
     ],
     "configuration": {
-      "title": "YOCO",
+      "title": "YOCO(You Only Copy Once)",
       "properties": {
         "YOCO.includeFilePath": {
           "type": "boolean",
