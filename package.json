@@ -19,6 +19,14 @@
         "command": "YOCO.copyTextWithFilePath",
         "title": "Copy Text With FileName as Comment"
       }
+    ],
+    "keybindings": [
+      {
+        "command": "YOCO.copyTextWithFilePath",
+        "key": "ctrl+shift+c",
+        "mac": "cmd+shift+c",
+        "when": "editorTextFocus"
+      }
     ]
   },
   "scripts": {
