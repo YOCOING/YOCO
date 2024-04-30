@@ -1,14 +1,16 @@
-# YOCO ㅡ You Only Copy Once 
+# YOCO ㅡ You Only Copy Once
+
+<img src="images/logo.png" alt="YOCO" width="128px" height="128px">
 
 > YOCO adds the path to the file at the top of your clipboard along with the copied code with just one shortcut.
 
 ## Features
 
 In version 1.0.0, the following features are provided:
+
 - Added command: YOCO.copyTextWithFilePath
 - Added configuration: YOCO.includeFilePath
 - Added key bindings (`cmd`+`shift`+`c` / `ctrl`+`shift`+`c`)
-
 
 <!-- Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
 
@@ -39,7 +41,6 @@ Calling out known issues can help limit users opening duplicate issues against y
 
 ## Release Notes
 
-
 ### 0.0.1
 
 Initial Extension Launching for feature that copy and paste to clipboard with file name
@@ -64,7 +65,6 @@ You can author your README using Visual Studio Code. Here are some useful editor
 
 * [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
 * [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/) -->
-  
 
 ## For more information
 

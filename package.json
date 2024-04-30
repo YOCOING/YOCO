@@ -1,8 +1,10 @@
 {
   "name": "YOCO",
   "displayName": "YOCO",
-  "description": "You Only Code Once",
+  "publisher": "yoco",
+  "description": "You Only Copy Once",
   "version": "0.0.1",
+  "icon": "images/icon.png",
   "license": "MIT",
   "repository": {
     "type": "git",
