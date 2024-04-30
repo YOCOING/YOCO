@@ -1,4 +1,5 @@
 import * as vscode from "vscode";
+import { generateFileNameComment } from "./utils/generateFileNameComment";
 
 export function activate(context: vscode.ExtensionContext) {
   // YOCO.copyTextWithFilePath
@@ -14,13 +15,29 @@ export function activate(context: vscode.ExtensionContext) {
     const text = document.getText(selection);
 
     // settings의 YOCO.includeFilePath가 true일 경우에만 실행
-    const includeFilePath = vscode.workspace.getConfiguration("YOCO").get("includeFilePath");
+    const includeFilePath = vscode.workspace
+      .getConfiguration("YOCO")
+      .get<boolean>("includeFilePaths", false);
+    const fileIdentifier = includeFilePath
+      ? document.uri.path
+      : document.uri.path.split("/").pop() || "Untitled";
 
-    const filePath = document.uri.path;
+    try {
+      const comment = generateFileNameComment(document.languageId, fileIdentifier);
+      const textToCopy = `${comment}\n${text}`;
+      await vscode.env.clipboard.writeText(textToCopy);
+      vscode.window.showInformationMessage("Text with file identifier copied to clipboard!");
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        vscode.window.showErrorMessage(`Error: ${error.message}`);
+      } else {
+        vscode.window.showErrorMessage(`An unexpected error occurred`);
+      }
+    }
 
-    const comment = `// ${includeFilePath ? filePath : filePath.split("/").pop()}\n`;
+    const comment = generateFileNameComment(document.languageId, fileIdentifier);
 
-    vscode.env.clipboard.writeText(comment + text);
+    vscode.env.clipboard.writeText(`${comment}\n${text}`);
   });
 
   context.subscriptions.push(disposable);
