@@ -1,16 +1,16 @@
 ---
-name: '✅ Feature'
-about: 기능, UI, 문서 개선 및 추가 요청을 위한 템플릿입니다.
-title: 'Feature: '
-labels: ''
-assignees: ''
+name: "✅ Feature"
+about: Suggest an idea or possible new feature for this project.
+title: "Feature: "
+labels: ""
+assignees: ""
 ---
 
-# FEATURE
+## Feature
 
 ## Summary
 
-> 이슈 요약
+> Summarize your issue
 
 ## To-Do
 
@@ -20,4 +20,4 @@ assignees: ''
 
 ## ETC
 
-> 기타 사항
+> Etc
