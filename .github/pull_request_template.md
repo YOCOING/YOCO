@@ -11,7 +11,7 @@ Closes [issue link]
 -
 -
 
-## 체크 리스트 (아래 사항들이 전부 체크되어야만 merge)
+## Checklist (Merge should only be performed once all of the following conditions are checked.)
 
 - [x] I have completed the necessary tests and verified that the functionality works as intended.
 - [x] I have written the code according to the code style guide.
