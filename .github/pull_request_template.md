@@ -1,6 +1,6 @@
 Closes [issue link]
 
-## Decsription
+## Description
 
 -
 -
