@@ -1,8 +1,8 @@
 # YOCO (You Only Copy Once) Contributing Guide
 
-We thank to everyone who takes the time to contribute to [YOCO](https://github.com/YouOnlyCopyOnce/YOCO)!
+We thank everyone who takes the time to contribute to [YOCO](https://github.com/YouOnlyCopyOnce/YOCO)!
 
-In this document, We would like to address some step before contributing to YOCO. If you want to jump to right in, We'd like to recomment to start with this document.
+In this document, We would like to address some steps before contributing to YOCO. If you want to jump to right in, we recommend starting with this document.
 
 ## Table of Content
 
