@@ -39,7 +39,7 @@ All of your commits must include one of the following indicators, and deviating 
 
 For example, if you find a typo in a document and want to correct it, a good commit message would be:
 
-```bash
+```
 [fix] typo in contributing.md
 ```
 
