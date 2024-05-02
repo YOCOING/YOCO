@@ -2,15 +2,13 @@
 
 <img src="images/logo.png" alt="YOCO Logo" width="128px" height="128px">
 
----
+**YOCO** automatically adds the file name at the top of any copied code, so that the file name is displayed when pasted.
 
-YOCO Automatically adds the file name at the top of any copied code, so that the file name is displayed when pasted.
+Useful when transferring code to GPT, embedding in blogs, or for documentation purposes!
 
-Useful when transferring code to GPT, embedding in blogs, or for documentation purposes.
+![Demo GIF](images/demo.gif)
 
 ## Features
-
-![Feature GIF](images/demo.gif)
 
 - Automatically adds the file name at the top of any copied code, so that the file name is displayed when pasted.
 - (Upcoming) Option to include the full path, relative path, or just the file name.
