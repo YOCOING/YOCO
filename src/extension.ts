@@ -21,23 +21,11 @@ export function activate(context: vscode.ExtensionContext) {
     const fileIdentifier = includeFilePath
       ? document.uri.path
       : document.uri.path.split("/").pop() || "Untitled";
-
-    try {
-      const comment = generateFileNameComment(document.languageId, fileIdentifier);
-      const textToCopy = `${comment}\n${text}`;
-      await vscode.env.clipboard.writeText(textToCopy);
-      vscode.window.showInformationMessage("Text with file identifier copied to clipboard!");
-    } catch (error: unknown) {
-      if (error instanceof Error) {
-        vscode.window.showErrorMessage(`Error: ${error.message}`);
-      } else {
-        vscode.window.showErrorMessage(`An unexpected error occurred`);
-      }
-    }
-
     const comment = generateFileNameComment(document.languageId, fileIdentifier);
 
-    vscode.env.clipboard.writeText(`${comment}\n${text}`);
+    await vscode.env.clipboard.writeText(`${comment}\n${text}`);
+
+    vscode.window.showInformationMessage("Text with file identifier copied to clipboard!");
   });
 
   context.subscriptions.push(disposable);
