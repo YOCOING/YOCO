@@ -13,7 +13,7 @@ async function main() {
     const vscodeExecutablePath = await downloadAndUnzipVSCode("1.40.1");
     const [cliPath, ...args] = resolveCliArgsFromVSCodeExecutablePath(vscodeExecutablePath);
 
-    cp.spawnSync(cliPath, [...args, "--install-extension", "<EXTENSION-ID-OR-PATH-TO-VSIX>"], {
+    cp.spawnSync(cliPath, [...args, "--install-extension", "yoco.YOCO"], {
       encoding: "utf-8",
       stdio: "inherit",
     });
