@@ -7,7 +7,7 @@ In this document, We would like to address some step before contributing to YOCO
 ## Table of Content
 
 - [_The way to add a new feature_](#the-way-to-add-a-new-feature)
-- [_Commit Convetion_](#commit-convetion)
+- [_Commit Convention_](#commit-convention)
 - [_How Pull Request in YOCO works?_](#how-pull-request-in-yoco-works)
 - [_Language Support_](#language-support)
 
@@ -21,21 +21,28 @@ Since the work of the code owners in YOCO all originates from issues, we recomme
 2. Create a new post by clicking `New Issue`.
 3. There will be 2 type of your work, `Feature` and `Bug Report`.
 4. By clicking `Get Started` of one of two, the contributors can create Issue.
-5. After filling up the description and submitting it, Now you can add a new Pull Request
+5. After filling up the description and submitting it, Now you can add a new Pull Request.
 
-## Commit Convetion
+## Commit Convention
 
 To enable collaborators to deduce the nature of code changes that will be recorded in the history, YOCO introduces a commit convention.
 
 All of your commits must include one of the following indicators, and deviating from this standard may result in an error during the commit:
 
 `[chore]` Modifications related to the build process, package manager, or project settings
+
 `[docs]` Modifications and additions to documentation
+
 `[feat]` Work on adding new features
+
 `[fix]` Bug fixes and typo corrections
+
 `[refactor]` Improvements to existing code
+
 `[style]` Code formatting unrelated to functionality, such as missing semicolons or quote adjustments
+
 `[test]` Work related to test code
+
 
 For example, if you find a typo in a document and want to correct it, a good commit message would be:
 
@@ -69,7 +76,7 @@ git clone git@github.com:your-github-name/YOCO.git
 
 ```bash
 # starting in your clone directory
-cd ~//Documents/Github/YOCO
+cd ~/Documents/Github/YOCO
 git remote add upstream git@github.com:YouOnlyCopyOnce/YOCO.git
 ```
 
@@ -85,7 +92,7 @@ This section describes how to build the project locally and how to prepare your 
 2. Go To Pull requests tab and click New pull request
 3. Base repository will be your remote branch, and head repository will be your local branch.
    ![image](./images/contribution/compareBranch.png)
-4. If you find some confilcts, we recomment to fix it before submitting pull request.
+4. If you find some conflict, we recommend to fix it before submitting pull request.
 5. Fill up the templates regarding your pull request.
 6. In the pull request description, the top section should include "Closes [issue link]" with your specific issue number, like `#issue-number`. By doing this, when the pull request is merged, your issue will also be automatically closed.
 
