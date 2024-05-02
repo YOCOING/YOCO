@@ -1,73 +1,54 @@
-# YOCO ㅡ You Only Copy Once
+# YOCO (You Only Copy Once)
 
-<img src="images/logo.png" alt="YOCO" width="128px" height="128px">
-
-> YOCO adds the path to the file at the top of your clipboard along with the copied code with just one shortcut.
-
-## Features
-
-In version 1.0.0, the following features are provided:
-
-- Added command: YOCO.copyTextWithFilePath
-- Added configuration: YOCO.includeFilePath
-- Added key bindings (`cmd`+`shift`+`c` / `ctrl`+`shift`+`c`)
-
-<!-- Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
-
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow. -->
-
-<!-- ## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them. -->
-
-<!-- ## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something. -->
-
-<!-- ## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension. -->
-
-## Release Notes
-
-### 0.0.1
-
-Initial Extension Launching for feature that copy and paste to clipboard with file name
+<img src="images/logo.png" alt="YOCO Logo" width="128px" height="128px">
 
 ---
 
-<!-- ## Following extension guidelines
+YOCO Automatically adds the file name at the top of any copied code, so that the file name is displayed when pasted.
 
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
+Useful when transferring code to GPT, embedding in blogs, or for documentation purposes.
 
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
+## Features
 
-## Working with Markdown
+![Feature GIF](images/demo.gif)
 
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
+- Automatically adds the file name at the top of any copied code, so that the file name is displayed when pasted.
+- (Upcoming) Option to include the full path, relative path, or just the file name.
+- (Upcoming) Automatically detects the language of the file being copied and inserts the file path in an appropriate comment format.
+- (Upcoming) Optionally enclose the path in backticks instead of using comments.
 
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
+### Key Binding
 
-## For more information
+- Replace `cmd+c` / `ctrl+c` with `cmd+shift+c` / `ctrl+shift+c` to copy code with the file path included.
 
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/) -->
+- To customize the shortcut, assign your desired key combination to the `YOCO.copyTextWithFilePath` command in your shortcut settings.
 
-## For more information
+### Configuration
 
-We are currently developing to offer more features than ever before, and we plan to provide information on new features and how to contribute as well.
+This extension contributes the following settings:
+
+- `YOCO.enable`: Enable or disable this extension.
+- `YOCO.includeFilePath`: Set to `true` to include the file path in the copied text.
+
+## FAQ
+
+- **Q: How do I use YOCO?**
+  - A: Simply use the designated key binding (`cmd+shift+c` / `ctrl+shift+c`) to copy the text along with the file path.
+
+## Contribution
+
+If you would like to contribute to the development of YOCO, please refer to our [Contributing Guide](CONTRIBUTING.md).
+
+## Development
+
+For details on setting up your development environment and the development process, please see our [Development Guide](DEVELOPMENT.md).
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Donate
+
+If you find YOCO useful and would like to support its continued development, consider donating at [Buy Me A Coffee](https://buymeacoffee.com/yoco).
 
 **Enjoy!**
