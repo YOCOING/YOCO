@@ -3,6 +3,7 @@
 		"module": "Node16",
 		"target": "ES2022",
 		"outDir": "out",
+    "esModuleInterop": true,
 		"lib": [
 			"ES2022"
 		],

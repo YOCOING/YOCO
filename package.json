@@ -52,6 +52,7 @@
     "pretest": "yarn run compile && yarn run lint",
     "lint": "eslint src --ext ts",
     "test:vscode": "vscode-test",
+    "test:mocha": "mocha --require ts-node/register src/test/**/*.spec.ts",
     "lint-staged": "lint-staged",
     "prepare": "husky"
   },
@@ -70,7 +71,9 @@
     "eslint-plugin-prettier": "^5.1.3",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.2",
+    "mocha": "^10.4.0",
     "prettier": "^3.2.5",
+    "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
   }
 }
