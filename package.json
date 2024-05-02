@@ -50,7 +50,7 @@
     "pretest": "yarn run compile && yarn run lint",
     "lint": "eslint src --ext ts",
     "test:vscode": "vscode-test",
-    "test:mocha": "mocha --require ts-node/register src/test/**/*.test.ts",
+    "test:mocha": "mocha --require ts-node/register src/test/**/*.spec.ts",
     "lint-staged": "lint-staged",
     "prepare": "husky"
   },
