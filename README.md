@@ -19,15 +19,14 @@ Useful when transferring code to GPT, embedding in blogs, or for documentation p
 
 ### Key Binding
 
-- Replace `cmd+c` / `ctrl+c` with `cmd+shift+c` / `ctrl+shift+c` to copy code with the file path included.
+- Use `cmd+shift+c` / `ctrl+shift+c` to copy code with the file path included.
 
-- To customize the shortcut, assign your desired key combination to the `YOCO.copyTextWithFilePath` command in your shortcut settings.
+- You can also customize the shortcut, by assigning your desired key combination to the command `YOCO.copyTextWithFilePath` in your shortcut settings.
 
 ### Configuration
 
 This extension contributes the following settings:
 
-- `YOCO.enable`: Enable or disable this extension.
 - `YOCO.includeFilePath`: Set to `true` to include the file path in the copied text.
 
 ## FAQ
