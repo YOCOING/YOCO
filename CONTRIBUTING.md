@@ -6,14 +6,14 @@ In this document, We would like to address some steps before contributing to YOC
 
 ## Table of Content
 
-- [_The way to add a new feature_](#the-way-to-add-a-new-feature)
+- [_How to Add a New Feature_](#how-to-add-a-new-feature)
 - [_Commit Convention_](#commit-convention)
 - [_How Pull Request in YOCO works?_](#how-pull-request-in-yoco-works)
 - [_Language Support_](#language-support)
 
-Click a list of content will locate you to the document directly.
+Clicking on an item in the list of content will take you directly to that section.
 
-## The Way To Add A New Feature
+## How to Add a New Feature
 
 Since the work of the code owners in YOCO all originates from issues, we recommend that contributors also create an issue before they begin working in earnest.
 
@@ -29,20 +29,13 @@ To enable collaborators to deduce the nature of code changes that will be record
 
 All of your commits must include one of the following indicators, and deviating from this standard may result in an error during the commit:
 
-`[chore]` Modifications related to the build process, package manager, or project settings
-
-`[docs]` Modifications and additions to documentation
-
-`[feat]` Work on adding new features
-
-`[fix]` Bug fixes and typo corrections
-
-`[refactor]` Improvements to existing code
-
-`[style]` Code formatting unrelated to functionality, such as missing semicolons or quote adjustments
-
-`[test]` Work related to test code
-
+- `[chore]` Modifications related to the build process, package manager, or project settings
+- `[docs]` Modifications and additions to documentation
+- `[feat]` Work on adding new features
+- `[fix]` Bug fixes and typo corrections
+- `[refactor]` Improvements to existing code
+- `[style]` Code formatting unrelated to functionality, such as missing semicolons or quote adjustments
+- `[test]` Work related to test code
 
 For example, if you find a typo in a document and want to correct it, a good commit message would be:
 
