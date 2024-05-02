@@ -35,3 +35,6 @@ jobs:
 
       - name: Set up Xvfb and Run vscode-test
         run: xvfb-run -a yarn test:vscode
+
+      - name: Run Mocha tests
+        run: yarn test:mocha
