@@ -84,10 +84,12 @@ This section describes how to build the project locally and how to prepare your 
 1. Go to your forked repository. (Before creating new pull request, kindly check if your forked `dev` branch is up to date.)
 2. Go To Pull requests tab and click New pull request
 3. Base repository will be your remote branch, and head repository will be your local branch.
-   [image](./images/contribution/compareBranch.png)
+   ![image](./images/contribution/compareBranch.png)
 4. If you find some confilcts, we recomment to fix it before submitting pull request.
 5. Fill up the templates regarding your pull request.
-6. Please keep in mind, If the feature you are adding is a new functionality that did not exist before, or if it enhances an existing code with additional features, you may also need to include test code. This ensures that the new or enhanced functionality works as expected and maintains the overall quality of the project.
+6. In the pull request description, the top section should include "Closes [issue link]" with your specific issue number, like `#issue-number`. By doing this, when the pull request is merged, your issue will also be automatically closed.
+
+- Please keep in mind, If the feature you are adding is a new functionality that did not exist before, or if it enhances an existing code with additional features, you may also need to include test code. This ensures that the new or enhanced functionality works as expected and maintains the overall quality of the project.
 
 ### How reviews work
 
