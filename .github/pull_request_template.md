@@ -1,6 +1,6 @@
 Closes [issue link]
 
-## Decsription
+## Description
 
 -
 -
@@ -11,9 +11,9 @@ Closes [issue link]
 -
 -
 
-## 체크 리스트 (아래 사항들이 전부 체크되어야만 merge)
+## Checklist (Merge should only be performed once all of the following conditions are checked.)
 
-- [x] 필요한 테스트를 완료하였고, 기능이 제대로 실행되는지 확인 하였습니다.
-- [x] 코드 스타일 가이드에 맞추어 코드를 작성 하였습니다.
-- [x] 제가 의도한 파일들과 수정 사항들만 커밋이 된 것을 확인 하였습니다.
-- [x] 본 수정 사항들을 팀원들과 사전에 상의하였고 팀원들 모두 해당 PR에 대하여 알고 있습니다.
+- [x] I have completed the necessary tests and verified that the functionality works as intended.
+- [x] I have written the code according to the code style guide.
+- [x] I have confirmed that only the intended files and changes have been committed.
+- [x] I have discussed these changes with my team members in advance, and all team members are aware of this PR.

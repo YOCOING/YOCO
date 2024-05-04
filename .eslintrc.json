@@ -2,12 +2,16 @@
     "root": true,
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
-        "ecmaVersion": 6,
+        "ecmaVersion": "latest",
         "sourceType": "module"
     },
     "plugins": [
-        "@typescript-eslint"
+        "@typescript-eslint", "prettier"
     ],
+    "env": {
+    "browser": true,
+    "es2020": true
+  },
     "rules": {
         "@typescript-eslint/naming-convention": [
             "warn",
@@ -25,6 +29,13 @@
     "ignorePatterns": [
         "out",
         "dist",
-        "**/*.d.ts"
-    ]
+        "**/*.d.ts",
+          "commitlint.config.cjs",
+          ".lintstagedrc.cjs"
+    ],
+    "extends": [
+    "eslint:recommended",
+    "plugin:prettier/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ]
 }
