@@ -1,4 +1,5 @@
 import * as vscode from "vscode";
+import { generateFileNameComment } from "./utils/generateFileNameComment";
 
 export function activate(context: vscode.ExtensionContext) {
   // YOCO.copyTextWithFilePath
@@ -14,13 +15,17 @@ export function activate(context: vscode.ExtensionContext) {
     const text = document.getText(selection);
 
     // settings의 YOCO.includeFilePath가 true일 경우에만 실행
-    const includeFilePath = vscode.workspace.getConfiguration("YOCO").get("includeFilePath");
+    const includeFilePath = vscode.workspace
+      .getConfiguration("YOCO")
+      .get<boolean>("includeFilePaths", false);
+    const fileIdentifier = includeFilePath
+      ? document.uri.path
+      : document.uri.path.split("/").pop() || "Untitled";
+    const comment = generateFileNameComment(document.languageId, fileIdentifier);
 
-    const filePath = document.uri.path;
+    await vscode.env.clipboard.writeText(`${comment}\n${text}`);
 
-    const comment = `// ${includeFilePath ? filePath : filePath.split("/").pop()}\n`;
-
-    vscode.env.clipboard.writeText(comment + text);
+    vscode.window.showInformationMessage("Text with file identifier copied to clipboard!");
   });
 
   context.subscriptions.push(disposable);
