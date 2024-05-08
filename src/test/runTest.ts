@@ -10,10 +10,12 @@ async function main() {
   try {
     const extensionDevelopmentPath = path.resolve(__dirname, "../../../");
     const extensionTestsPath = path.resolve(__dirname, "./suite/index");
-    const vscodeExecutablePath = await downloadAndUnzipVSCode("1.40.1");
+    const vscodeExecutablePath = await downloadAndUnzipVSCode("stable");
     const [cliPath, ...args] = resolveCliArgsFromVSCodeExecutablePath(vscodeExecutablePath);
 
-    cp.spawnSync(cliPath, [...args, "--install-extension", "yoco.YOCO"], {
+    const vsixPath = path.resolve(extensionDevelopmentPath, "./src/test/yoco.YOCO.vsix");
+
+    cp.spawnSync(cliPath, [...args, "--install-extension", vsixPath], {
       encoding: "utf-8",
       stdio: "inherit",
     });
