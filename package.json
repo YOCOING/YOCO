@@ -51,7 +51,7 @@
     "watch": "tsc -watch -p ./",
     "pretest": "yarn run compile && yarn run lint",
     "lint": "eslint src --ext ts",
-    "test:vscode": "vscode-test",
+    "test:vscode": "yarn run compile && vscode-test",
     "test:mocha": "mocha --require ts-node/register src/test/**/*.spec.ts",
     "lint-staged": "lint-staged",
     "prepare": "husky"
@@ -75,5 +75,8 @@
     "prettier": "^3.2.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@types/glob": "^8.1.0"
   }
 }
