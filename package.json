@@ -49,7 +49,7 @@
     "vscode:prepublish": "yarn run compile",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
-    "pretest": "yarn run compile && yarn run lint && mv *.vsix src/test/",
+    "pretest": "yarn run compile && yarn run lint",
     "lint": "eslint src --ext ts",
     "test:vscode": "yarn run compile && vscode-test",
     "test:mocha": "mocha --require ts-node/register src/test/**/*.spec.ts",
