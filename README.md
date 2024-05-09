@@ -1,6 +1,8 @@
 # YOCO (You Only Copy Once)
 
-<img src="images/logo.png" alt="YOCO Logo" width="128px" height="128px">
+<p align="center">
+  <img src="images/logo.png" alt="YOCO Logo" width="128px" height="128px">
+</p>
 
 **YOCO** automatically adds the file name at the top of any copied code, so that the file name is displayed when pasted.
 
