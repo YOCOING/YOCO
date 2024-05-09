@@ -1,6 +1,6 @@
 # YOCO (You Only Copy Once) Contributing Guide
 
-We thank everyone who takes the time to contribute to [YOCO](https://github.com/YouOnlyCopyOnce/YOCO)!
+We thank everyone who takes the time to contribute to [YOCO](https://github.com/YOCOING/YOCO)!
 
 In this document, We would like to address some steps before contributing to YOCO. If you want to jump to right in, we recommend starting with this document.
 
@@ -17,7 +17,7 @@ Clicking on an item in the list of content will take you directly to that sectio
 
 Since the work of the code owners in YOCO all originates from issues, we recommend that contributors also create an issue before they begin working in earnest.
 
-1. Go to [`Issue` in this repository](https://github.com/YouOnlyCopyOnce/YOCO/issues).
+1. Go to [`Issue` in this repository](https://github.com/YOCOING/YOCO/issues).
 2. Create a new post by clicking `New Issue`.
 3. There will be 2 type of your work, `Feature` and `Bug Report`.
 4. By clicking `Get Started` of one of two, the contributors can create Issue.
@@ -70,11 +70,11 @@ git clone git@github.com:your-github-name/YOCO.git
 ```bash
 # starting in your clone directory
 cd ~/Documents/Github/YOCO
-git remote add upstream git@github.com:YouOnlyCopyOnce/YOCO.git
+git remote add upstream git@github.com:YOCOING/YOCO.git
 ```
 
 When you run `git remote -v`, you'll see that you have two remotes: `upstream` and `origin`.
-The `origin` remote is your fork (`https://github.com/your-github-name/YOCO`) and the `upstream` remote is the `YouOnlyCopyOnce/YOCO` repository.
+The `origin` remote is your fork (`https://github.com/your-github-name/YOCO`) and the `upstream` remote is the `YOCOING/YOCO` repository.
 
 ### Creating a pull request
 
