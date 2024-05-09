@@ -6,12 +6,13 @@ export function run(): Promise<void> {
   const mocha = new Mocha({
     ui: "tdd",
     color: true,
+    require: ["ts-node/register"],
   });
 
   const testsRoot = path.resolve(__dirname, "..");
 
   return new Promise((c, e) => {
-    glob("**/**.test.js", { cwd: testsRoot }, (err, files) => {
+    glob("**/*.+(test|spec).ts", { cwd: testsRoot }, (err, files) => {
       if (err) {
         return e(err);
       }

@@ -51,7 +51,7 @@
     "watch": "tsc -watch -p ./",
     "pretest": "yarn run compile && yarn run lint && mv *.vsix src/test/",
     "lint": "eslint src --ext ts",
-    "test:vscode": "yarn run compile && node ./out/test/runTest.js",
+    "test:vscode": "yarn run compile && vscode-test",
     "test:mocha": "mocha --require ts-node/register src/test/**/*.spec.ts",
     "lint-staged": "lint-staged",
     "prepare": "husky"
