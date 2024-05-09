@@ -9,7 +9,7 @@ import * as path from "path";
 async function main() {
   try {
     const extensionDevelopmentPath = path.resolve(__dirname, "../../../");
-    const extensionTestsPath = path.resolve(__dirname, "./suite/index");
+    const extensionTestsPath = path.resolve(__dirname, "./utils/index");
     const vscodeExecutablePath = await downloadAndUnzipVSCode("stable");
     const [cliPath, ...args] = resolveCliArgsFromVSCodeExecutablePath(vscodeExecutablePath);
 
