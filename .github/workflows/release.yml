@@ -16,33 +16,21 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "18"
-
-      - name: Install dependencies
-        run: npm install
-
       - name: Extract version from package.json
         id: package_version
-        run: echo "::set-output name=version::$(node -p "require('./package.json').version")"
-
-      - name: Create Git tag
-        run: |
-          git tag v${{ steps.package_version.outputs.version }}
-          git push origin v${{ steps.package_version.outputs.version }}
+        run: echo "::set-output name=version::$(grep '\"version\"' package.json | cut -d '\"' -f 4)"
 
       - name: Extract Changelog for Current Version
         id: changelog
         run: |
           VERSION=${{ steps.package_version.outputs.version }}
-          awk -v ver=$VERSION '/^## \[' ver '\]/,/^## \[[0-9]/{print}' CHANGELOG.md
-          echo "::set-output name=content::$(<temp_changelog.md)"
-        shell: bash
+          CHANGELOG_CONTENT=$(awk -v ver="$VERSION" 'BEGIN {p=0; first=1} $0 ~ "## \\[" ver "\\]" {p=1; next} /^## \[/ {if(p) exit} p{if (first && /^$/) {first=0; next} print}' CHANGELOG.md)
+          echo "::set-output name=content::${CHANGELOG_CONTENT}"
 
       - name: Create GitHub Release
         uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: v${{ steps.package_version.outputs.version }}
           release_name: Release v${{ steps.package_version.outputs.version }}
