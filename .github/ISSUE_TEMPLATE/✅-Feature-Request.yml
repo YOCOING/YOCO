@@ -8,7 +8,8 @@ body:
         Thanks you for taking the time to fill out this feature request report!
         We kindly ask that you search to see if an [issue already exists](https://github.com/YOCOING/YOCO/issues) for your feature.
         We are also happy to accept contributions from our users. For more details see [here](https://github.com/YOCOING/YOCO/blob/dev/CONTRIBUTING.md).
- - type: textarea
+
+  - type: textarea
     attributes:
       label: Description
       description: |
