@@ -31,11 +31,11 @@ jobs:
       - name: Run lint
         run: yarn lint
 
-      - name: Compile the project
-        run: yarn compile
-
       - name: Set up Xvfb and Run vscode-test
         run: xvfb-run -a yarn test:vscode
 
       - name: Run Mocha tests
         run: yarn test:mocha
+
+      - name: Compile the project
+        run: yarn compile
