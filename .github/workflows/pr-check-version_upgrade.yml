@@ -24,7 +24,6 @@ jobs:
         with:
           diff-search: true
           assume-same-version: old
-          static-checking: localIsNew
 
       - name: Enforce CHANGELOG.md update
         uses: dangoslen/changelog-enforcer@v3
