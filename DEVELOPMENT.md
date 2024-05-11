@@ -58,6 +58,6 @@ Here is an example of a `package.json` file for a Visual Studio Code extension:
 
 ## Test
 
-To run the test code, execute the script `test:vscode`. If you want to add new test code, create files with names ending in `.test.ts` or `.spec.ts` in the `test/utils` directory.
+To run the test code, execute the script `yarn run test:vscode`. If you want to add new test code, create files with names ending in `.test.ts` or `.spec.ts` in the `test/utils` directory.
 
 For more information, refer to the [Testing Extensions](https://code.visualstudio.com/api/working-with-extensions/testing-extension) of VSCode API documentation.
