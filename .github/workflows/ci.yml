@@ -1,9 +1,10 @@
-name: Run Tests on PR to Dev
+name: Run Tests on PR to Dev and Main
 
 on:
   pull_request:
     branches:
       - dev
+      - main
 
 jobs:
   build-and-test:
@@ -25,16 +26,16 @@ jobs:
         run: npm install -g yarn
 
       - name: Install dependencies
-        run: yarn install
+        run: yarn install --frozen-lockfile
 
       - name: Run lint
         run: yarn lint
-
-      - name: Compile the project
-        run: yarn compile
 
       - name: Set up Xvfb and Run vscode-test
         run: xvfb-run -a yarn test:vscode
 
       - name: Run Mocha tests
         run: yarn test:mocha
+
+      - name: Compile the project
+        run: yarn compile

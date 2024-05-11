@@ -1,9 +1,8 @@
+import * as path from "path";
 import * as vscode from "vscode";
 import { generateFileNameComment } from "./utils/generateFileNameComment";
 
 export function activate(context: vscode.ExtensionContext) {
-  // YOCO.copyTextWithFilePath
-  // 가장 상단에 `// ${fileName}` 형식의 주석을 추가한 형태로 텍스트를 복사한다.
   const disposable = vscode.commands.registerCommand("YOCO.copyTextWithFilePath", async () => {
     const editor = vscode.window.activeTextEditor;
     if (!editor) {
@@ -13,18 +12,32 @@ export function activate(context: vscode.ExtensionContext) {
     const document = editor.document;
     const selection = editor.selection;
     const text = document.getText(selection);
-
-    // settings의 YOCO.includeFilePath가 true일 경우에만 실행
     const includeFilePath = vscode.workspace
       .getConfiguration("YOCO")
-      .get<boolean>("includeFilePaths", false);
-    const fileIdentifier = includeFilePath
-      ? document.uri.path
-      : document.uri.path.split("/").pop() || "Untitled";
-    const comment = generateFileNameComment(document.languageId, fileIdentifier);
+      .get<boolean>("includeFilePath", false);
 
-    await vscode.env.clipboard.writeText(`${comment}\n${text}`);
+    let filePath = document.uri.path;
+    const workspacePath = vscode.workspace.getWorkspaceFolder(document.uri);
 
+    // 설정이 true일 때만 파일 경로를 포함
+    if (includeFilePath && workspacePath) {
+      filePath = path.relative(workspacePath.uri.path, document.uri.path);
+    } else {
+      filePath = document.uri.path.split("/").pop() || "Untitled";
+    }
+
+    const useBacktick = vscode.workspace
+      .getConfiguration("YOCO")
+      .get<boolean>("useBacktick", false);
+    if (useBacktick) {
+      const comment = generateFileNameComment(document.languageId, filePath);
+      await vscode.env.clipboard.writeText(
+        `\`\`\`${document.languageId}\n${comment}\n${text}\n\`\`\``
+      );
+    } else {
+      const comment = generateFileNameComment(document.languageId, filePath);
+      await vscode.env.clipboard.writeText(`${comment}\n${text}`);
+    }
     vscode.window.showInformationMessage("Text with file identifier copied to clipboard!");
   });
 

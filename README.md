@@ -1,73 +1,54 @@
-# YOCO ㅡ You Only Copy Once
+# YOCO (You Only Copy Once)
 
-<img src="images/logo.png" alt="YOCO" width="128px" height="128px">
+<p align="center">
+  <img src="images/logo.png" alt="YOCO Logo" width="128px" height="128px">
+</p>
 
-> YOCO adds the path to the file at the top of your clipboard along with the copied code with just one shortcut.
+**YOCO** automatically adds the file name at the top of any copied code, so that the file name is displayed when pasted.
+
+Useful when transferring code to GPT, embedding in blogs, or for documentation purposes!
+
+![Demo GIF](images/demo.gif)
 
 ## Features
 
-In version 1.0.0, the following features are provided:
+- Automatically adds the file name at the top of any copied code, so that the file name is displayed when pasted.
+- Option to include file path, or just the file name.
+- Automatically detects the language of the file being copied and inserts the file path in an appropriate comment format.
+- Optionally wrap codeblock with backticks(```).
 
-- Added command: YOCO.copyTextWithFilePath
-- Added configuration: YOCO.includeFilePath
-- Added key bindings (`cmd`+`shift`+`c` / `ctrl`+`shift`+`c`)
+### Key Binding
 
-<!-- Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- Use `cmd+shift+c` / `ctrl+shift+c` to copy code with the file path included.
 
-For example if there is an image subfolder under your extension project workspace:
+- You can also customize the shortcut, by assigning your desired key combination to the command `YOCO.copyTextWithFilePath` in your shortcut settings.
 
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow. -->
-
-<!-- ## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them. -->
-
-<!-- ## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
+### Configuration
 
 This extension contributes the following settings:
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something. -->
+- `YOCO.includeFilePath`: Set to `true` to include the file path in the copied text.
+- `YOCO.useBacktick`: Set to `true` to wrap codeblock with backticks(```).
 
-<!-- ## Known Issues
+## FAQ
 
-Calling out known issues can help limit users opening duplicate issues against your extension. -->
+- **Q: How do I use YOCO?**
+  - A: Simply use the designated key binding (`cmd+shift+c` / `ctrl+shift+c`) to copy the text along with the file path.
 
-## Release Notes
+## Contribution
 
-### 0.0.1
+If you would like to contribute to the development of YOCO, please refer to our [Contributing Guide](CONTRIBUTING.md).
 
-Initial Extension Launching for feature that copy and paste to clipboard with file name
+## Development
 
----
+For details on setting up your development environment and the development process, please see our [Development Guide](DEVELOPMENT.md).
 
-<!-- ## Following extension guidelines
+## License
 
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
+## Donate
 
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/) -->
-
-## For more information
-
-We are currently developing to offer more features than ever before, and we plan to provide information on new features and how to contribute as well.
+If you find YOCO useful and would like to support its continued development, consider donating at [Buy Me A Coffee](https://buymeacoffee.com/yoco).
 
 **Enjoy!**

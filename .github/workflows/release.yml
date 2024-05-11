@@ -1,0 +1,37 @@
+name: Release Workflow on PR Merge
+
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - main
+
+jobs:
+  create-release:
+    if: github.event.pull_request.merged == true && github.event.pull_request.base.ref == 'main' && github.event.pull_request.head.ref == 'dev'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Extract version from package.json
+        id: package_version
+        run: echo "::set-output name=version::$(grep '\"version\"' package.json | cut -d '\"' -f 4)"
+
+      - name: Extract Changelog for Current Version
+        id: changelog
+        run: |
+          VERSION=${{ steps.package_version.outputs.version }}
+          CHANGELOG_CONTENT=$(awk -v ver="$VERSION" 'BEGIN {p=0; first=1} $0 ~ "## \\[" ver "\\]" {p=1; next} /^## \[/ {if(p) exit} p{if (first && /^$/) {first=0; next} print}' CHANGELOG.md)
+          echo "::set-output name=content::${CHANGELOG_CONTENT}"
+
+      - name: Create GitHub Release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v${{ steps.package_version.outputs.version }}
+          release_name: Release v${{ steps.package_version.outputs.version }}
+          body: ${{ steps.changelog.outputs.content }}
