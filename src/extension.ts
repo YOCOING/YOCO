@@ -26,10 +26,17 @@ export function activate(context: vscode.ExtensionContext) {
       filePath = document.uri.path.split("/").pop() || "Untitled";
     }
 
-    const comment = generateFileNameComment(document.languageId, filePath);
-
-    await vscode.env.clipboard.writeText(`${comment}\n${text}`);
-
+    const useBacktick = vscode.workspace
+      .getConfiguration("YOCO")
+      .get<boolean>("useBacktick", false);
+    if (useBacktick) {
+      await vscode.env.clipboard.writeText(
+        `\`\`\`${document.languageId}:${filePath}\n${text}\n\`\`\``
+      );
+    } else {
+      const comment = generateFileNameComment(document.languageId, filePath);
+      await vscode.env.clipboard.writeText(`${comment}\n${text}`);
+    }
     vscode.window.showInformationMessage("Text with file identifier copied to clipboard!");
   });
 

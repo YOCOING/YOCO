@@ -41,6 +41,11 @@
           "type": "boolean",
           "default": true,
           "description": "Include file path in copied text"
+        },
+        "YOCO.useBacktick": {
+          "type": "boolean",
+          "default": true,
+          "description": "Use backtick instead of comment"
         }
       }
     }
