@@ -6,7 +6,7 @@ body:
       value: |
         Thanks you for taking the time to raise up new issue for us!
 
-        This issue tracker is for reporting reproducible bugs or regression's found in [TanStack Query](https://github.com/TanStack/query)
+        This issue tracker is for reporting reproducible bugs or regression's found in [YOCO](https://github.com/YOCOING/YOCO/issues)
 
         The more information you fill in up, we can take more actions to resolve reported bug.
   - type: textarea
