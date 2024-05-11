@@ -3,7 +3,7 @@
   "displayName": "YOCO(You Only Copy Once)",
   "publisher": "yoco",
   "description": "Copy your code with file name at once",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "icon": "images/icon.png",
   "license": "MIT",
   "repository": {
