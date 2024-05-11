@@ -14,15 +14,14 @@ export function activate(context: vscode.ExtensionContext) {
     const text = document.getText(selection);
     const includeFilePath = vscode.workspace
       .getConfiguration("YOCO")
-      .get<boolean>("includeFilePaths", false);
+      .get<boolean>("includeFilePath", false);
 
     let filePath = document.uri.path;
     const workspacePath = vscode.workspace.getWorkspaceFolder(document.uri);
 
     // 설정이 true일 때만 파일 경로를 포함
     if (includeFilePath && workspacePath) {
-      const relativePath = path.relative(workspacePath.uri.path, document.uri.fsPath);
-      filePath = relativePath;
+      filePath = path.relative(workspacePath.uri.path, document.uri.path);
     } else {
       filePath = document.uri.path.split("/").pop() || "Untitled";
     }
