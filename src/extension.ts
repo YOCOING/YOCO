@@ -30,8 +30,9 @@ export function activate(context: vscode.ExtensionContext) {
       .getConfiguration("YOCO")
       .get<boolean>("useBacktick", false);
     if (useBacktick) {
+      const comment = generateFileNameComment(document.languageId, filePath);
       await vscode.env.clipboard.writeText(
-        `\`\`\`${document.languageId}:${filePath}\n${text}\n\`\`\``
+        `\`\`\`${document.languageId}\n${comment}\n${text}\n\`\`\``
       );
     } else {
       const comment = generateFileNameComment(document.languageId, filePath);

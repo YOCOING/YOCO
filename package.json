@@ -45,7 +45,7 @@
         "YOCO.useBacktick": {
           "type": "boolean",
           "default": true,
-          "description": "Use backtick instead of comment"
+          "description": "Wrap codeblock with backticks"
         }
       }
     }
