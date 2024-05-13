@@ -18,6 +18,12 @@ jobs:
         id: package_version
         run: echo "::set-output name=version::$(grep '\"version\"' package.json | cut -d '\"' -f 4)"
 
+      - name: Push Git Tag
+        run: |
+          TAG="v${{ steps.package_version.outputs.version }}"
+          git tag $TAG
+          git push origin $TAG
+
       - name: Get Changelog Entry
         id: changelog_reader
         uses: mindsers/changelog-reader-action@v2
@@ -29,8 +35,8 @@ jobs:
       - name: Create/update release
         uses: ncipollo/release-action@v1
         with:
-          tag: v${{ steps.changelog_reader.outputs.version }}
-          name: v${{ steps.changelog_reader.outputs.version }}
+          tag: v${{ steps.package_version.outputs.version }}
+          name: v${{ steps.package_version.outputs.version }}
           body: ${{ steps.changelog_reader.outputs.changes }}
           allowUpdates: true
           token: ${{ secrets.GITHUB_TOKEN }}
