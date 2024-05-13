@@ -15,7 +15,9 @@ Useful when transferring code to GPT, embedding in blogs, or for documentation p
 - Automatically adds the file name at the top of any copied code, so that the file name is displayed when pasted.
 - Option to include file path, or just the file name.
 - Automatically detects the language of the file being copied and inserts the file path in an appropriate comment format.
-- Optionally wrap codeblock with backticks(```).
+  ![Demo GIf for language option](images/demo_language.gif)
+- Optionally wrap codeblock with backticks(```) when `YOCO.useBacktick` is set true.
+  ![gif for backtick option](images/demo_backtick.gif)
 
 ### Key Binding
 
