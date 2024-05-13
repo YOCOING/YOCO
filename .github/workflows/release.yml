@@ -14,6 +14,11 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
       - name: Check for version update in package.json
         id: check_version
         uses: EndBug/version-check@v2
@@ -30,7 +35,6 @@ jobs:
         with:
           validation_level: warn
           version: ${{ steps.check_version.outputs.version }}
-          path: ./CHANGELOG.md
 
       - name: Create/update release
         uses: ncipollo/release-action@v1
