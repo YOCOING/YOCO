@@ -4,6 +4,12 @@ All notable changes to the "YOCO" extension will be documented in this file.
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [0.0.4] - 2024-05-14
+
+- Improved README.md with new gif images.
+- Fixed isssue template not applied properly.
+- Fixed release workflow not working.
+
 ## [0.0.3] - 2024-05-11
 
 - Enhanced stability by adding test code to existing features.
