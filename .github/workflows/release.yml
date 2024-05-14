@@ -3,8 +3,6 @@ name: Release Workflow on PR Merge
 on:
   pull_request:
     types: [closed]
-    branches:
-      - main
 
 jobs:
   create-release:
@@ -16,22 +14,33 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Extract version from package.json
-        id: package_version
-        run: echo "::set-output name=version::$(grep '\"version\"' package.json | cut -d '\"' -f 4)"
-
-      - name: Extract Changelog for Current Version
-        id: changelog
-        run: |
-          VERSION=${{ steps.package_version.outputs.version }}
-          CHANGELOG_CONTENT=$(awk -v ver="$VERSION" 'BEGIN {p=0; first=1} $0 ~ "## \\[" ver "\\]" {p=1; next} /^## \[/ {if(p) exit} p{if (first && /^$/) {first=0; next} print}' CHANGELOG.md)
-          echo "::set-output name=content::${CHANGELOG_CONTENT}"
-
-      - name: Create GitHub Release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
-          tag_name: v${{ steps.package_version.outputs.version }}
-          release_name: Release v${{ steps.package_version.outputs.version }}
-          body: ${{ steps.changelog.outputs.content }}
+          node-version: 20
+
+      - name: Check for version update in package.json
+        id: check_version
+        uses: EndBug/version-check@v2
+
+      - name: Push Git Tag
+        run: |
+          TAG="v${{ steps.check_version.outputs.version }}"
+          git tag $TAG
+          git push origin $TAG
+
+      - name: Get Changelog Entry
+        id: changelog_reader
+        uses: mindsers/changelog-reader-action@v2
+        with:
+          validation_level: warn
+          version: ${{ steps.check_version.outputs.version }}
+
+      - name: Create/update release
+        uses: ncipollo/release-action@v1
+        with:
+          tag: v${{ steps.check_version.outputs.version }}
+          name: v${{ steps.check_version.outputs.version }}
+          body: ${{ steps.changelog_reader.outputs.changes }}
+          allowUpdates: true
+          token: ${{ secrets.GITHUB_TOKEN }}
