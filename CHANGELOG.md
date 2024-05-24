@@ -4,6 +4,10 @@ All notable changes to the "YOCO" extension will be documented in this file.
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [0.0.5] - 2024-05-24
+
+- set `YOCO.useBackticks` false by default
+
 ## [0.0.4] - 2024-05-14
 
 - Improved README.md with new gif images.
