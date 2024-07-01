@@ -11,7 +11,8 @@ export function activate(context: vscode.ExtensionContext) {
 
     const document = editor.document;
     const selection = editor.selection;
-    const text = document.getText(selection);
+    // selection이 존재하지 않을 때는 전체 도큐먼트의 텍스트 복사
+    const text = selection.isEmpty ? document.getText() : document.getText(selection);
     const includeFilePath = vscode.workspace
       .getConfiguration("YOCO")
       .get<boolean>("includeFilePath", false);
